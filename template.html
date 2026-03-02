@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross Country Team</title>
+
+    <!-- Highlight Section Style -->
+    <style>
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Team Header -->
+    <header>
+        <img src="garrett-big.png" alt="Garrett Comer">
+        <h1>Garrett Comer
+        </h1>
+        <p>Class of 2027 · Ann Arbor Skyline</p>
+    </header>
+
+    <!-- Highlight Section -->
+    <section>
+        <h2>Highlights</h2>
+        <div class="highlights-grid">
+            <div>
+                <h3>Personal Records</h3>
+                <p>Description here</p>
+            </div>
+            <div>
+                <h3>Season Bests</h3>
+                <p>Description here</p>
+            </div>
+            <div>
+                <h3>Events</h3>
+                <p>Description here</p>
+            </div>
+            <div>
+                <h3>Achievements</h3>
+                <p>Description here</p>
+            </div>
+            <div>
+                <h3>Total Races</h3>
+                <p>Description here</p>
+            </div>
+            <div>
+                <h3>Current Goals</h3>
+                <p>Description here</p>
+            </div>
+        </div>
+    </section>
+
+    <!--sort buttons-->
+    <p> Sort By:</p>
+    <button type="button">Recent</button>
+    <button type="button">Place</button>
+    <button type="button">Time</button>
+    <button type="button">PRs</button>
+
+    <!-- Race 1 -->
+    <div class="{{RACE_PLACEMENT}} {{SHORT_DATE}} {{RACE_PLACE}} {{PR}} {{RACE_TIME}}">
+        <h2>#{{RACE_PLACEMENT}}</h2>
+        <p>Date:{{LONG_DATE}}</p>
+        <p>Location: {{RACE_NAME}}</p>
+        <p><a href={RACE_LINK}>View on Athletic.net</a></p>
+    </div>
+</body>
+
+</html>
