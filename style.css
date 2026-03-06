@@ -1,0 +1,96 @@
+*{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#athlete-header {
+    background-color: #1a73e8;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  
+  .athlete-name,  .athlete-info {
+    color: white;
+    margin: 0;
+  }
+  
+  .athlete-photo {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    object-fit: contain;
+    order: 2;
+  }
+
+/* ------------------------------------------------------------------------------------------ */
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .highlights-grid div {
+    text-align: center;
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border: 3px solid #1a73e8;
+    border-radius: 8px;
+  }
+
+/* ------------------------------------------------------------------------------------------ */
+
+  .sort-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    padding: 4rem 2rem 0rem 2rem;
+  }
+  
+  .sort-section p {
+    margin: 0;
+    font-weight: 600;
+  }
+  
+  .sort-section button {
+    padding: 0.65rem 1.5rem;
+    font-size: 1rem;
+    border: 1px solid #1a73e8;
+    border-radius: 6px;
+    background-color: white;
+    color: #1a73e8;
+    cursor: pointer;
+  }
+  
+  .sort-section button:hover {
+    background-color: #1a73e8;
+    color: white;
+  }
+/* ------------------------------------------------------------------------------------------ */
+.race-card {
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: white;
+  }
+  
+.race-card--pr {
+    border-left: 8px solid #22c55e; /* green accent for PRs */
+  }
+  
+.race-card--2025 { background: #f0f9ff; }
+.race-card--2024 {background: #fefce8;}
+.race-card--2023 {background: #fdf4ff;}
+
+
+.cards-container {
+    display: grid;
+    gap: 1rem;
+    padding: 2rem;
+}
