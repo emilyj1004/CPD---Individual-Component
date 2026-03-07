@@ -1,6 +1,45 @@
-*{
-    font-family:Arial, Helvetica, sans-serif;
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-size: 16px;
+}
+
+/* dark mode--------------------------------------------------------------  */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #f0f0f0;
+    }
+
+    .race-card--2025 { background: #0f2233; }
+    .race-card--2024 { background: #1f1a00; }
+    .race-card--2023 { background: #1a0f1f; }
+
+    .highlights-grid div {
+        border-color: #4a9eff;
+    }
+}
+/* reduce motion---------------------------------------------------------  */
+@media (prefers-reduced-motion: reduce) {
+    .race-card {
+        animation: none;
+    }
+
+    .sort-section button {
+        transition: none;
+    }
+}
+
+/* header---------------------------------------------------------------  */
+
+
 
 #athlete-header {
     background-color: #1a73e8;
@@ -12,10 +51,22 @@
     box-sizing: border-box;
   }
   
-  .athlete-name,  .athlete-info {
+  .athlete-name {
     color: white;
     margin: 0;
-  }
+    font-size: 1.5rem;
+}
+
+.athlete-info {
+    color: white;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 600px) {
+    .athlete-name { font-size: 2rem; }
+    .athlete-info { font-size: 1rem; }
+}
   
   .athlete-photo {
     width: 80px;
@@ -26,71 +77,121 @@
     order: 2;
   }
 
-/* ------------------------------------------------------------------------------------------ */
+/* highlights------------------------------------------------------------- */
+
+.highlights-section {
+    margin-top: 3rem;
+}
 
 .highlights-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
-  }
-  
-  .highlights-grid div {
+    padding: 1rem;
+}
+
+.highlights-grid div {
     text-align: center;
     padding: 1.5rem;
-    border: 1px solid #e0e0e0;
     border: 3px solid #1a73e8;
     border-radius: 8px;
-  }
+}
+
+@media (min-width: 600px) {
+    .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .highlights-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
 /* ------------------------------------------------------------------------------------------ */
 
-  .sort-section {
+.sort-section {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
     gap: 0.75rem;
-    padding: 4rem 2rem 0rem 2rem;
-  }
-  
-  .sort-section p {
+    padding: 2rem 1rem 0 1rem;
+}
+
+.sort-section p {
     margin: 0;
     font-weight: 600;
-  }
-  
-  .sort-section button {
+}
+
+.sort-section button {
     padding: 0.65rem 1.5rem;
     font-size: 1rem;
     border: 1px solid #1a73e8;
     border-radius: 6px;
-    background-color: white;
-    color: #1a73e8;
-    cursor: pointer;
-  }
-  
-  .sort-section button:hover {
     background-color: #1a73e8;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sort-section button:hover,
+.sort-section button:focus {
+    background-color: #0047a4;
     color: white;
-  }
+}
+
 /* ------------------------------------------------------------------------------------------ */
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+}
+
 .race-card {
     border-radius: 12px;
     padding: 1rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     background: white;
-  }
-  
+    animation: fadeInUp 0.4s ease both;
+}
+
 .race-card--pr {
-    border-left: 8px solid #22c55e; /* green accent for PRs */
-  }
-  
-.race-card--2025 { background: #f0f9ff; }
-.race-card--2024 {background: #fefce8;}
-.race-card--2023 {background: #fdf4ff;}
+    border-left: 8px solid #22c55e;
+}
+
+.race-card--2025 { background: #29343c; }
+.race-card--2024 { background: #403e2b; }
+.race-card--2023 { background: #36273a; }
+
+/* cards fade up----------------------------------------- */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
-.cards-container {
-    display: grid;
-    gap: 1rem;
-    padding: 2rem;
+/* sticky----------------------------------------- */
+
+#athlete-header {
+    background-color: #1a73e8;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
