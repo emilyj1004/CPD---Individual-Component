@@ -18,9 +18,9 @@ body {
         color: #f0f0f0;
     }
 
-    .race-card--2025 { background: #0f2233; }
-    .race-card--2024 { background: #1f1a00; }
-    .race-card--2023 { background: #1a0f1f; }
+    .race-card--2025 { background: #29343c; }
+    .race-card--2024 { background: #403e2b; }
+    .race-card--2023 { background: #36273a; }
 
     .highlights-grid div {
         border-color: #4a9eff;
@@ -194,4 +194,8 @@ body {
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.race-card__link {
+    color: #90caf9;
 }
